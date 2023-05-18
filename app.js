@@ -1,10 +1,21 @@
-const res = prompt('Сколько будет 7 + или - 15?');
-switch (true) {
-    case res === 'Я не Робот':
-    case Number(res) === 22:
-    case Number(res) === - 8:
-        console.log('Успех');
-    break;
-    default:
-        console.log('Вы робот');
-}    
+const tasks = ['Задача 1'];
+function Add(task) {
+    tasks.push(task);
+}
+ function Remove(task) {
+    const index = tasks.indexOf(task);
+    tasks.splice(index,1);
+ }
+function Priority(task) {
+    const index = tasks.indexOf(task);
+    const oldTask = tasks[index];
+    tasks.splice(index,1);
+    tasks.unshift(oldTask);
+}
+Add('Задача 2');
+Add('Задача 3');
+console.log(tasks);
+Remove('Задача 2');
+console.log(tasks);
+Priority('Задача 3');
+console.log(tasks)
